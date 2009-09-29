@@ -1,0 +1,1 @@
+Don't forget "rake db:migrate" to add the queue table.
