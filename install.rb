@@ -1,1 +1,1 @@
-# Install hook code here
+FileUtils.mkdir_p(File.join(RAILS_ROOT, 'app', 'models', 'billboard_api'))
