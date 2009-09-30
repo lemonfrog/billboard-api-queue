@@ -4,8 +4,9 @@ namespace :billboard do
     puts "Start process queue entries"
     
     BillboardApi::OrderQueue.all.each do |entry|
+      user = entry.user
       order = entry.order
-      if order.save
+      if user.save && order.save
         entry.delete
       end
     end
