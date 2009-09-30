@@ -5,7 +5,9 @@ namespace :billboard do
     
     BillboardApi::OrderQueue.all.each do |entry|
       user = entry.user
+      user.authentication = {:api_key => BillboardApi::Config.instance.api_key, :username => BillboardApi::Config.instance.user_name}
       order = entry.order
+      order.authentication = {:api_key => BillboardApi::Config.instance.api_key, :username => BillboardApi::Config.instance.user_name}
       if user.save && order.save
         entry.delete
       end

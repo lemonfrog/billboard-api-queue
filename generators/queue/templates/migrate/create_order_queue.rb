@@ -3,6 +3,9 @@ class CreateOrderQueue < ActiveRecord::Migration
     create_table "order_queues", :force => true do |t|
       t.column :order, :text
       t.column :user, :text
+      t.column :line_items, :text
+      t.column :authentication, :text
+      t.column :reminder_charges, :text
     end
   end
 
