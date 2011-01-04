@@ -4,6 +4,7 @@ namespace :billboard do
     puts "Start process queue entries"
     
     BillboardApi::OrderQueue.all.each do |entry|
+      puts "Procesing #{entry}"
       begin
         customer = entry.user
         customer.authentication = entry.authentication
@@ -18,10 +19,12 @@ namespace :billboard do
         order.line_items_attributes = line_items
         
         if customer.save
+          puts "  Customer #{customer} saved."
           order.customer_id = customer.id
           if order.save
+            puts "  Order #{order} saved."
             order.save # send an update request
-            entry.delete
+            entry.delete!
           end
         end
       rescue
