@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{simplificator-billboard-api-queue}
-  s.version = "0.1.0"
+  s.version = "0.8.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["simplificator"]
-  s.date = %q{2011-01-04}
+  s.date = %q{2011-01-27}
   s.description = %q{Billboard-API is needed to add the additional models for the billboard application.}
   s.email = %q{info@simplificator.com}
   s.files = [
@@ -22,8 +22,8 @@ Gem::Specification.new do |s|
     "generators/queue/templates/models/billboard_api/order_queue.rb",
     "init.rb",
     "install.rb",
-    "lib/billboard_api_queue.rb",
-    "lib/tasks/billboard_api_queue_tasks.rake",
+    "lib/billboard-api-queue/tasks.rb",
+    "simplificator-billboard-api-queue.gemspec",
     "test/inplace_test.rb",
     "uninstall.rb"
   ]
